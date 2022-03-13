@@ -56,3 +56,15 @@ model.score(X_test, y_test)
 print(metrics.confusion_matrix(y_test, y_predicted))
 #false positive - I tipo klaida. sergi, nors is tikro nesergi.
 #false negative - II antro tipo klaida. nesergi, nors is tikro sergi.
+
+#naujų duomenų predicted
+naujas = pd.read_csv('Social_Network_Ads_predict.csv')
+
+one = OneHotEncoder()
+one.fit_transform(naujas.Gender.values.reshape(-1, 1)).toarray()
+one = OneHotEncoder(drop='first')
+naujas['male'] = (one.fit_transform(naujas.Gender.values.reshape(-1, 1)).toarray())
+naujas1 = naujas.drop(["Gender"], axis=1)
+
+naujas1['predicted'] =model.predict(naujas1)
+naujas1.to_csv('pirkimas.csv', index=False)
