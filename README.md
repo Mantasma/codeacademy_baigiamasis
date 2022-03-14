@@ -1,4 +1,4 @@
-Logistinės regresijos modelis
+Logistinės regresijos modelis.
 Turime csv failą su duomenimis apie vartotojų pasirinkimą pirkti produktus arba jų nepirkti. Naudodami sklearn biblioteką sukūrėme programą, kuri sugeba apskaičiuoti ar vartotojas pirks produktą, žinant jo lytį, amžių bei pajamas.
 Pagrindiniai failai yra:
 requirements.txt - bibliotekos, kurių reikia.
